@@ -4,3 +4,4 @@ wordpress/*
 !wordpress/.keep
 themes/*
 !themes/.keep
+log
