@@ -6,6 +6,6 @@ themes/*
 !themes/.keep
 log
 config/*
-!config/deploy.rb
+!config/deploy-sample.rb
 !config/deploy/production-sample.rb
 !config/deploy/staging-sample.rb
