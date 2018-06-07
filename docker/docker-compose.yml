@@ -36,7 +36,8 @@ services:
     links:
       - db
     volumes:
-      - ./wordpress:/var/www/html
+      - ../wordpress:/var/www/html
+      - ../themes:/var/www/themes
     networks:
       - wordpress-network
 
