@@ -1,5 +1,9 @@
+init:
+	@cd deploy && bundle install
 link-themes:
 	@cd tasks && ./link_themes.sh
+get-wp:
+	@cd tasks && ./import_wp.sh
 start:
 	@cd ./docker/tasks && ./start.sh
 stop:

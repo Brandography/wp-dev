@@ -1,7 +1,6 @@
 *.sql
 *.gz
-wordpress/*
-!wordpress/.keep
+wordpress
 themes/*
 !themes/.keep
 log
