@@ -4,9 +4,9 @@ docker-compose up -d
 echo "
 ===================== 🚀 Done 🚀 ===================
 
-      Access your new links:
+    Access your new links:
 
-      🌎 Web server: http://localhost/
-      ⚙️ PHPMyAdmin: http://localhost:8080
+    🌎  Web server: http://localhost/
+    ⚙️  PHPMyAdmin: http://localhost:8080
 
 ===================== 🚀 Done 🚀 ==================="

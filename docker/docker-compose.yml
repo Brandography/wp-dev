@@ -25,6 +25,8 @@ services:
      - MYSQL_ROOT_PASSWORD=wordpress
     ports:
      - 127.0.0.1:8080:80
+    networks:
+      - wordpress-network
 
   wordpress:
     image: wordpress:latest

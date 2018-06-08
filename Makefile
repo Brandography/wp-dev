@@ -9,12 +9,12 @@ start:
 stop:
 	@cd ./docker/tasks && ./stop.sh
 kill: 
-	@cd ./docker/tasks && .kill.sh
+	@cd ./docker/tasks && ./kill.sh
 shell: 
 	@cd ./docker/tasks && ./shell.sh
-db-reset:
-	@cd ./docker/tasks && ./db-reset.sh
+db-import:
+	@cd ./docker/tasks && ./db_reset.sh $(file)
 db-dump:
 	@cd ./docker/tasks && ./db_dump.sh
-deploy-staging:
-	@cd deploy && bundle exec cap staging deploy
+deployto:
+	@cd deploy && bundle exec cap $(stage) deploy
