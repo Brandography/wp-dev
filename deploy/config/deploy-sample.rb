@@ -4,6 +4,9 @@ lock "~> 3.10.2"
 set :application, "set application name here"
 set :repo_url, "set git repo here"
 
+# set to deploy only what is in the themes directory
+set :repo_tree, 'themes/'
+
 # how many old releases de we want to keep
 set :keep_releases, 5
 
