@@ -3,4 +3,5 @@ docker/ export-ignore
 tasks/ export-ignore
 Makefile export-ignore
 README.md export-ignore
-.gitattibutes export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
