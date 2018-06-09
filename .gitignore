@@ -4,7 +4,7 @@ wordpress
 themes/*
 !themes/.keep
 log
-config/*
-!config/deploy-sample.rb
-!config/deploy/production-sample.rb
-!config/deploy/staging-sample.rb
+deploy/config/*
+!deploy/config/deploy-sample.rb
+!deploy/config/deploy/production-sample.rb
+!deploy/config/deploy/staging-sample.rb
