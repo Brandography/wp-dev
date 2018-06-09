@@ -10,9 +10,13 @@
 This will install the latest version of Wordpress at the root of this project. You may whish to import an existing version of wordpress.
 `make get-wp`
 ### Link WP themes
-Custom WP themes are to be placed in the theme folder at the root of this project.
-The following command will link all the themes to the wordpress install.
+Custom WP themes are to be placed in the src/themes folder.
+The following command will link all the themes to the dev wordpress install.
 `make link-themes`
+### Link WP plugins
+Custom WP plugins are to be placed in the src/plugins folder.
+The following command will link all the plugins to the dev wordpress install.
+`make link-plugins`
 ### Start Docker
 `make start`
 ### Stop Docker

@@ -2,6 +2,8 @@ init:
 	@cd deploy && bundle install
 link-themes:
 	@cd tasks && ./link_themes.sh
+link-plugins:
+	@cd tasks && ./link_plugins.sh
 get-wp:
 	@cd tasks && ./import_wp.sh
 start:

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 cd ../
-dirs=(themes/*)
+dirs=(src/themes/*)
 for dir in "${dirs[@]}"
 do
     theme=$(basename "$dir")
     echo $theme
-    ln -s ../../../themes/$theme wordpress/wp-content/themes/$theme
+    ln -s ../../../src/themes/$theme wordpress/wp-content/themes/$theme
 done

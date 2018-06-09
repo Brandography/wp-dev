@@ -39,7 +39,8 @@ services:
       - db
     volumes:
       - ../wordpress:/var/www/html
-      - ../themes:/var/www/themes
+      - ../src/themes:/var/www/themes
+      - ../src/plugins:/var/www/plugins
     networks:
       - wordpress-network
 
