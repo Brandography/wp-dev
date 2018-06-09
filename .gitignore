@@ -1,10 +1,4 @@
 *.sql
 *.gz
 wordpress
-themes/*
-!themes/.keep
 log
-deploy/config/*
-!deploy/config/deploy-sample.rb
-!deploy/config/deploy/production-sample.rb
-!deploy/config/deploy/staging-sample.rb
