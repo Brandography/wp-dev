@@ -18,5 +18,5 @@ set :linked_dirs, %w{}
 
 # run scripts
 namespace :deploy do 
-
+  after :deploy, "permissions:set"
 end
