@@ -4,6 +4,8 @@ link-themes:
 	@cd tasks && ./link_themes.sh
 link-plugins:
 	@cd tasks && ./link_plugins.sh
+unlink-themes:
+	@cd tasks && ./unlink_themes.sh
 get-wp:
 	@cd tasks && ./import_wp.sh
 start:
