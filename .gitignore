@@ -2,3 +2,8 @@
 *.gz
 wordpress
 log
+
+# Capistrano deploy configs
+deploy/config/deploy/staging.rb
+deploy/config/deploy/production.rb
+deploy/config/deploy.rb
