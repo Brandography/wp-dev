@@ -1,5 +1,5 @@
 init:
-	@cd deploy && bundle install
+	@cd cap && bundle install
 link-themes:
 	@cd tasks && ./link_themes.sh
 link-plugins:
@@ -20,5 +20,5 @@ db-import:
 	@cd ./docker/tasks && ./db_reset.sh $(file)
 db-dump:
 	@cd ./docker/tasks && ./db_dump.sh
-deployto:
-	@cd deploy && bundle exec cap $(stage) deploy
+deploy:
+	@cd cap && bundle exec cap $(to) deploy
