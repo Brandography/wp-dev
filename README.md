@@ -1,15 +1,19 @@
-# WP DOCKER DEV & DEPLOY
+# Wordpress DEV & DEPLOY
+## Includes
+- PHPMyAdmin
+- Capistrano deploy tool
+
 
 ## Requirements
 - [docker-compose](https://docs.docker.com/compose/)
 - [Ruby](https://www.ruby-lang.org/en/) <= 2.3
 
-### Initialization
+## Initialization
 ```
 make init
 ```
 ### Install Wordpress
-This will install the latest version of Wordpress at the root of this project. You may whish to import an existing version of wordpress.
+This will install the latest version of Wordpress at the root of this project. If you whish to import an existing version of wordpress on your own, place it in the wordpress folder.
 ```
 make get-wp
 ```
@@ -26,6 +30,7 @@ The following command will link all the plugins to the dev wordpress install.
 make link-plugins
 ```
 ### Start Docker
+Before you start Docker, make sure the posrts 80, 3306 and 8080 are free. 
 ```
 make start
 ```
@@ -53,8 +58,17 @@ The mysql file sould be compressed with gz.
 make db-import file=<file path>
 ```
 ## Deployment
-This deploy tool uses [capistrano](http://capistranorb.com/).
+1. Copy and rename the cap/config/deploy-sample.rb file to cap/config/deploy.rb. In this file set the appplication name on line 4 and the repo url on line 5.
+2. Copy and rename the cap/config/deploy/staging-sample.rb file to cap/config/deploy/staging.rb. In this file set the staging branch name on line 2, set the server url or ip address and the server ssh user name on line 3, set the deploy path on line 4 (set the deploy folder to be on dir down from the wordpress install).
+3. same as staging for cap/config/deploy/production-sample.rb
 ### Deploy to server
 ```
 make deploy to=<production/staging>
 ``` 
+### Symlink the themes and plugins to their respective folders
+```
+ln -s /path/to/deploy/folder/current/themes/<your theme> /path/to/wordpress/themes/folder/<your theme>
+```
+```
+ln -s /path/to/deploy/folder/current/plugins/<your plugin> /path/to/wordpress/plugins/folder/<your plugin>
+```

@@ -4,6 +4,6 @@ wordpress
 log
 
 # Capistrano deploy configs
-deploy/config/deploy/staging.rb
-deploy/config/deploy/production.rb
-deploy/config/deploy.rb
+cap/config/deploy/staging.rb
+cap/config/deploy/production.rb
+cap/config/deploy.rb
