@@ -1,28 +1,27 @@
-version: '3'
+version: '3.5'
 services:
   db:
     image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - 127.0.0.1:3306:3306
     volumes:
       - db_data:/var/lib/mysql
     tty: true
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
     networks:
       - wordpress-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-     - PMA_HOST=db
-     - PMA_USER=wordpress
-     - PMA_PASSWORD=wordpress
-     - MYSQL_ROOT_PASSWORD=wordpress
+      - PMA_HOST=${PMA_HOST}
+      - PMA_USER=${PMA_USER}
+      - PMA_PASSWORD=${PMA_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
      - 127.0.0.1:8080:80
     networks:
@@ -32,11 +31,6 @@ services:
     image: wordpress:latest
     ports:
       - 127.0.0.1:80:80
-    restart: always
-    depends_on:
-      - db
-    links:
-      - db
     volumes:
       - ../wordpress:/var/www/html
       - ../src/themes:/var/www/themes
@@ -45,8 +39,9 @@ services:
       - wordpress-network
 
 volumes:
-    db_data:
+    db_data: {}
 
 networks:
   wordpress-network:
+    name: ${COMPOSE_PROJECT_NAME}
     driver: bridge
