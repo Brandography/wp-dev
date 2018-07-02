@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd ../
+cd ../../
 if [ -n "$(ls -A wordpress 2>/dev/null)" ] 
 then
     echo "Wordpress seems to be already imported!!"

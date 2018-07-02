@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd ../
+cd ../../
 dirs=(src/themes/*)
 for dir in "${dirs[@]}"
 do

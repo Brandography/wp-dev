@@ -32,9 +32,9 @@ services:
     ports:
       - 127.0.0.1:80:80
     volumes:
-      - ../wordpress:/var/www/html
-      - ../src/themes:/var/www/themes
-      - ../src/plugins:/var/www/plugins
+      - ../../wordpress:/var/www/html
+      - ../../src/themes:/var/www/themes
+      - ../../src/plugins:/var/www/plugins
     networks:
       - wordpress-network
 
