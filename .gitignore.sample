@@ -1,0 +1,11 @@
+*.sql
+*.gz
+.env
+wordpress/*
+!wordpress/.keep
+log
+
+# Capistrano deploy configs
+dev/cap/config/deploy/staging.rb
+dev/cap/config/deploy/production.rb
+dev/cap/config/deploy.rb
