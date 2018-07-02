@@ -10,7 +10,7 @@
 
 ## Initialization
 ```
-make init
+make init project-name=<project name>
 ```
 ### Install Wordpress
 This will install the latest version of Wordpress at the root of this project. If you whish to import an existing version of wordpress on your own, place it in the wordpress folder.

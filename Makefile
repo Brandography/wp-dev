@@ -1,5 +1,5 @@
 init:
-	@cd cap && bundle install
+	@cd tasks && ./init.sh $(project-name)
 link-themes:
 	@cd tasks && ./link_themes.sh
 link-plugins:
