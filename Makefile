@@ -3,24 +3,24 @@ init:
 update:
 	@cd dev/tasks && ./update.sh
 link-themes:
-	@cd tasks && ./link_themes.sh
+	@cd dev/tasks && ./link_themes.sh
 link-plugins:
-	@cd tasks && ./link_plugins.sh
+	@cd dev/tasks && ./link_plugins.sh
 unlink-themes:
-	@cd tasks && ./unlink_themes.sh
+	@cd dev/tasks && ./unlink_themes.sh
 get-wp:
-	@cd tasks && ./import_wp.sh
+	@cd dev/tasks && ./import_wp.sh
 start:
-	@cd ./docker/tasks && ./start.sh
+	@cd dev/docker/tasks && ./start.sh
 stop:
-	@cd ./docker/tasks && ./stop.sh
+	@cd dev/docker/tasks && ./stop.sh
 kill: 
-	@cd ./docker/tasks && ./kill.sh
+	@cd dev/docker/tasks && ./kill.sh
 shell: 
-	@cd ./docker/tasks && ./shell.sh
+	@cd dev/docker/tasks && ./shell.sh
 db-import:
-	@cd ./docker/tasks && ./db_reset.sh $(file)
+	@cd dev/docker/tasks && ./db_reset.sh $(file)
 db-dump:
-	@cd ./docker/tasks && ./db_dump.sh
+	@cd dev/docker/tasks && ./db_dump.sh
 deploy:
-	@cd cap && bundle exec cap $(to) deploy
+	@cd dev/cap && bundle exec cap $(to) deploy
