@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 cd ../
-docker-compose stop
-docker-compose down -v
+source ../../.env
+
+docker-compose -p $COMPOSE_PROJECT_NAME stop
+docker-compose -p $COMPOSE_PROJECT_NAME down -v

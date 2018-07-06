@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd ../
+source ../../.env
 
-source .env
 
 if [ -z "$COMPOSE_PROJECT_NAME" ]; then
     echo "
@@ -10,7 +10,7 @@ if [ -z "$COMPOSE_PROJECT_NAME" ]; then
     
     "
 else
-    docker-compose up -d
+    docker-compose -p $COMPOSE_PROJECT_NAME up -d
     echo "
     ===================== 🚀 Done 🚀 ===================
 
