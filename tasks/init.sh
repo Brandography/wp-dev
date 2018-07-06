@@ -9,5 +9,4 @@ else
     mkdir -p ../../src/plugins
     mkdir ../../wordpress
     cp ../Makefile ../../
-    cp ../.gitignore.sample ../../.gitignore
 fi
