@@ -38,7 +38,7 @@ db-dump: ## Export the database
 ## #	Capistrano
 ## -------------------------------------------------------
 ##
-deploy: Deploy to server
+deploy: ## Deploy to server
 	@cd $(DEV_DIR)/cap && bundle exec cap $(to) deploy
 
 
