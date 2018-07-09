@@ -3,14 +3,14 @@ cd ../
 source ../../.env
 
 
-if [ -z "$COMPOSE_PROJECT_NAME" ]; then
+if [ -z "$PROJECT_NAME" ]; then
     echo "
     
     Please initialize your project by typing \"make init project-name=<project name>\"
     
     "
 else
-    docker-compose -p $COMPOSE_PROJECT_NAME up -d
+    docker-compose -p $PROJECT_NAME up -d
     echo "
     ===================== 🚀 Done 🚀 ===================
 

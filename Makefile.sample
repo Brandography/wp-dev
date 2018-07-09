@@ -1,0 +1,25 @@
+update:
+	@cd $(DEV_DIR) && git pull origin master
+	@echo "\n" && $(DEV_DIR)/init.sh $(PROJECT_NAME)
+link-themes:
+	@cd $(DEV_DIR)/tasks && ./link_themes.sh
+link-plugins:
+	@cd $(DEV_DIR)/tasks && ./link_plugins.sh
+unlink-themes:
+	@cd $(DEV_DIR)/tasks && ./unlink_themes.sh
+get-wp:
+	@cd $(DEV_DIR)/tasks && ./import_wp.sh
+start:
+	@cd $(DEV_DIR)/docker/tasks && ./start.sh
+stop:
+	@cd $(DEV_DIR)/docker/tasks && ./stop.sh
+kill: 
+	@cd $(DEV_DIR)/docker/tasks && ./kill.sh
+shell: 
+	@cd $(DEV_DIR)/docker/tasks && ./shell.sh
+db-import:
+	@cd $(DEV_DIR)/docker/tasks && ./db_reset.sh $(file)
+db-dump:
+	@cd $(DEV_DIR)/docker/tasks && ./db_dump.sh
+deploy:
+	@cd $(DEV_DIR)/cap && bundle exec cap $(to) deploy
