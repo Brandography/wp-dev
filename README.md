@@ -3,7 +3,6 @@
 - PHPMyAdmin
 - Capistrano
 
-
 ## Requirements
 - [docker-compose](https://docs.docker.com/compose/)
 - [Ruby](https://www.ruby-lang.org/en/) <= 2.3
@@ -11,6 +10,7 @@
 ## Initialization
 You need to be in your project's root dir to initialize this environment 
 ```
+git submodule add git@github.com:danhort/wp-docker-dev.git <dev dir>
 ./<dev dir>/init.sh <project name>
 ```
 ### Install Wordpress
@@ -58,6 +58,7 @@ The mysql file should be compressed with gz.
 ```
 make db-import file=<file path>
 ```
+
 ## Deployment
 1. Copy and rename the cap/config/deploy-sample.rb file to cap/config/deploy.rb. In this file set the application name on line 4 and the repo url on line 5.
 2. Copy and rename the cap/config/deploy/staging-sample.rb file to cap/config/deploy/staging.rb. In this file set the staging branch name on line 2, set the server url or ip address and the server ssh user name on line 3, set the deploy path on line 4 (set the deploy folder to be on dir down from the wordpress install).
