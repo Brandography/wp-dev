@@ -1,8 +1,5 @@
 *.sql
 *.gz
-.env
-wordpress/*
-!wordpress/.keep
 log
 
 # Capistrano deploy configs

@@ -2,5 +2,5 @@
 cd ../
 source ../../.env
 
-docker-compose -p $COMPOSE_PROJECT_NAME stop
-docker-compose -p $COMPOSE_PROJECT_NAME down -v
+docker-compose -p $PROJECT_NAME stop
+docker-compose -p $PROJECT_NAME down -v

@@ -1,25 +1,50 @@
-update:
+##
+## -------------------------------------------------------
+## #	Setup
+## -------------------------------------------------------
+##
+update: ## Update the dev and deploy environment
 	@cd $(DEV_DIR) && git pull origin master
 	@echo "\n" && $(DEV_DIR)/init.sh $(PROJECT_NAME)
-link-themes:
+link-themes: ## Link the wp themes from the src dir to the Docker environment 
 	@cd $(DEV_DIR)/tasks && ./link_themes.sh
-link-plugins:
+link-plugins: ## Link the wp plugins from the src dir to the Docker environment 
 	@cd $(DEV_DIR)/tasks && ./link_plugins.sh
-unlink-themes:
+unlink-themes: ## Unlink the wp themes from the src dir to the Docker environment 
 	@cd $(DEV_DIR)/tasks && ./unlink_themes.sh
-get-wp:
+get-wp: ## Download the latest version of Wordpress
 	@cd $(DEV_DIR)/tasks && ./import_wp.sh
-start:
+
+##
+## -------------------------------------------------------
+## #	Docker
+## -------------------------------------------------------
+##
+start: ## Start the docker containers
 	@cd $(DEV_DIR)/docker/tasks && ./start.sh
-stop:
+stop: ## Stop the Docker containers
 	@cd $(DEV_DIR)/docker/tasks && ./stop.sh
-kill: 
+kill: ## Kill the Docker containers
 	@cd $(DEV_DIR)/docker/tasks && ./kill.sh
-shell: 
+shell: ## SSH into the wordpress container
 	@cd $(DEV_DIR)/docker/tasks && ./shell.sh
-db-import:
+db-import: ## Import the database 
 	@cd $(DEV_DIR)/docker/tasks && ./db_reset.sh $(file)
-db-dump:
+db-dump: ## Export the database
 	@cd $(DEV_DIR)/docker/tasks && ./db_dump.sh
-deploy:
+
+##
+## -------------------------------------------------------
+## #	Capistrano
+## -------------------------------------------------------
+##
+deploy: Deploy to server
 	@cd $(DEV_DIR)/cap && bundle exec cap $(to) deploy
+
+
+.DEFAULT_GOAL := help
+help:
+	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) \
+		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' \
+		| sed -e 's/\[32m##/[33m/'
+.PHONY: help
