@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 cd ../
+source ../../.env
+
 if [ -z "$1" ]
   then
-    docker-compose exec --user www-data wordpress bash
+    docker-compose -p $PROJECT_NAME exec --user www-data wordpress bash
 else
-    docker-compose exec --user $@ wordpress bash
+    docker-compose -p $PROJECT_NAME exec --user $@ wordpress bash
 fi
