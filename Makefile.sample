@@ -4,8 +4,7 @@
 ## -------------------------------------------------------
 ##
 update: ## Update the dev and deploy environment
-	@cd $(DEV_DIR) && git pull origin master
-	@echo "\n" && $(DEV_DIR)/init.sh $(PROJECT_NAME)
+	@$(DEV_DIR)/init.sh $(PROJECT_NAME)
 link-themes: ## Link the wp themes from the src dir to the Docker environment 
 	@cd $(DEV_DIR)/tasks && ./link_themes.sh
 link-plugins: ## Link the wp plugins from the src dir to the Docker environment 

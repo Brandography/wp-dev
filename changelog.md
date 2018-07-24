@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial changelog input
 - MIT License
+### Changed
+- Updated update script to get latest tag version instead of master
 
 
 [Unreleased]: https://github.com//brandography/wp-dev/compare/0.2.1...HEAD
