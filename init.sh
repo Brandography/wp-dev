@@ -14,7 +14,7 @@ else
 
 	if [ -f "../.env" ]; then
 		source ../.env
-		if [ $DEV_VERSION =  $LATEST_TAG ] && [ $PROJECT_NAME = $1 ]; then
+		if [ $DEV_VERSION = $LATEST_TAG ] && [ $PROJECT_NAME = $1 ]; then
 			echo "The dev & deploy environment is at the latest version $LATEST_TAG and the project name is the same."
 			echo "No need for an update."
 			exit 0;
