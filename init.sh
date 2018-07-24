@@ -3,21 +3,27 @@ if [ -z "$1" ]; then
     echo "Enter your project name"
 	exit 0;
 else
-    DEVDIR=$(dirname "$0")
-	
+	DEVDIR=$(dirname "$0")
 	cd $DEVDIR
 
-	git fetch --tags
-	LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
-	echo "Updating to the latest version $LATEST_TAG"
-	git checkout $LATEST_TAG
+	echo $2
 
-	if [ -f "../.env" ]; then
-		source ../.env
-		if [ $DEV_VERSION = $LATEST_TAG ] && [ $PROJECT_NAME = $1 ]; then
-			echo "The dev & deploy environment is at the latest version $LATEST_TAG and the project name is the same."
-			echo "No need for an update."
-			exit 0;
+	if [ "$2" = "master" ]; then
+		git checkout master
+		git pull origin master
+	else
+		git fetch --tags
+		LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+		echo "Updating to the latest version $LATEST_TAG"
+		git checkout $LATEST_TAG
+
+		if [ -f "../.env" ]; then
+			source ../.env
+			if [ $DEV_VERSION = $LATEST_TAG ] && [ $PROJECT_NAME = $1 ]; then
+				echo "The dev & deploy environment is at the latest version $LATEST_TAG and the project name is the same."
+				echo "No need for an update."
+				exit 0;
+			fi
 		fi
 	fi
 

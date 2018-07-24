@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Updated MIT license copyright
+- Updated init script to be able to init from master branch for development purposes
+### Added
+- Wordpress docker build + conf files + user files
+- docker-compose build task
 
 ##[0.1.1] - 2018-07-24
 ### Fixed

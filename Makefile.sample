@@ -19,6 +19,8 @@ get-wp: ## Download the latest version of Wordpress
 ## #	Docker
 ## -------------------------------------------------------
 ##
+build: ## Build the docker containers
+	@cd $(DEV_DIR)/docker/tasks && ./build.sh
 start: ## Start the docker containers
 	@cd $(DEV_DIR)/docker/tasks && ./start.sh
 stop: ## Stop the Docker containers
