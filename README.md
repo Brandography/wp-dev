@@ -10,7 +10,7 @@
 ## Initialization
 You need to be in your project's root dir to initialize this environment 
 ```
-git submodule add git@github.com:danhort/wp-dev.git <dev dir>
+git submodule add git@github.com:Brandography/wp-dev.git <dev dir>
 ./<dev dir>/init.sh <project name>
 ```
 ### Install Wordpress
