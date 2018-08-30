@@ -5,11 +5,11 @@
 ##
 update: ## Update the dev and deploy environment
 	@$(DEV_DIR)/init.sh $(PROJECT_NAME)
-link-themes: ## Link the wp themes from the src dir to the Docker environment 
+link-themes: ## Link the wp themes from the src dir to the Docker environment
 	@cd $(DEV_DIR)/tasks && ./link_themes.sh
-link-plugins: ## Link the wp plugins from the src dir to the Docker environment 
+link-plugins: ## Link the wp plugins from the src dir to the Docker environment
 	@cd $(DEV_DIR)/tasks && ./link_plugins.sh
-unlink-themes: ## Unlink the wp themes from the src dir to the Docker environment 
+unlink-themes: ## Unlink the wp themes from the src dir to the Docker environment
 	@cd $(DEV_DIR)/tasks && ./unlink_themes.sh
 get-wp: ## Download the latest version of Wordpress
 	@cd $(DEV_DIR)/tasks && ./import_wp.sh
@@ -29,7 +29,9 @@ kill: ## Kill the Docker containers
 	@cd $(DEV_DIR)/docker/tasks && ./kill.sh
 shell: ## SSH into the wordpress container
 	@cd $(DEV_DIR)/docker/tasks && ./shell.sh
-db-import: ## Import the database 
+db-shell: ## SSH into db container
+	@cd $(DEV_DIR)/docker/tasks && ./db_shell.sh
+db-import: ## Import the database
 	@cd $(DEV_DIR)/docker/tasks && ./db_reset.sh $(file)
 db-dump: ## Export the database
 	@cd $(DEV_DIR)/docker/tasks && ./db_dump.sh
