@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2018-10-06
+### Added
+- wp-cli
+
 ## [0.2.2] - 2018-08-30
 ### Fixed
 - fixed more wp link plugin script
@@ -44,7 +48,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Updated update script to get latest tag version instead of master
 
 
-[Unreleased]: https://github.com//brandography/wp-dev/compare/0.2.2...HEAD
+[Unreleased]: https://github.com//brandography/wp-dev/compare/0.3.0...HEAD
+[0.3.0]: https://github.com//brandography/wp-dev/compare/0.2.2...0.3.0
 [0.2.2]: https://github.com//brandography/wp-dev/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com//brandography/wp-dev/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com//brandography/wp-dev/compare/0.1.2...0.2.0

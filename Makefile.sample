@@ -44,6 +44,14 @@ db-dump: ## Export the database
 deploy: ## Deploy to server
 	@cd $(DEV_DIR)/cap && bundle exec cap $(to) deploy
 
+##
+## -------------------------------------------------------
+## #	Wordpress
+## -------------------------------------------------------
+##
+wp: ## Use the wp cli [t=<wp command>]
+	@cd $(DEV_DIR)/tasks && ./wp.sh $(t)
+
 
 .DEFAULT_GOAL := help
 help:
