@@ -9,7 +9,7 @@ do
     then
         echo "This plugin $plugin is already in the wordpress plugins folder"
     else
-      ln -s ../../../plugins/$plugin wordpress/wp-content/plugins/$plugin
+      ln -s ../../../src/plugins/$plugin wordpress/wp-content/plugins/$plugin
       echo "Linked the plugin $plugin into the wordpress plugins folder."
     fi
 done

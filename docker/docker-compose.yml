@@ -27,8 +27,7 @@ services:
       - 80:80
     volumes:
       - ../../wordpress:/var/www/html
-      - ../../src/themes:/var/www/themes
-      - ../../src/plugins:/var/www/plugins
+      - ../../src:/var/www/src
     networks:
       - wordpress-network
 
